@@ -15,48 +15,28 @@
 // console.log(title);
 
 const h1 = document.querySelector("div.hello:first-child h1");
-h1.style.color = "red";
 
 // 이벤트 리스너 클릭
+// js로 css color 토글
+/*
 function handleTitleClick() {
-  console.log("title was clicked");
-}
+  const currentColor = h1.style.color;
+  let newColor;
+  if (currentColor === "blue") {
+    newColor = "tomato";
+  } else {
+    newColor = "blue";
+  }
 
-function handleMouseEnter() {
-  h1.innerHTML = "Mouse is here";
+  h1.style.color = newColor;
 }
+*/
 
-function handleMouseLeave() {
-  h1.innerHTML = "Mouse is gone";
-}
+function handleTitleClick() {}
 
-function hadleWindowResize() {
-  document.body.style.backgroundColor = "tomato";
-}
-
-function hadleWindowCopy() {
-  alert("copier!");
-}
-
-function handleWindowOffline() {
-  alert("SOS no WIFI");
-}
-
-function handleWindowOnline() {
-  alert("All cool!");
-}
-
-// click 이벤트가 발생했을 때 뒤에 함수 실행 / 함수엔 () 괄호 넣으면 안됨!
+// click 이벤트가 발생했을 때 뒤에 함수 실행 / 함수엔 () 괄호 넣으면 안됨! (콜백함수이기 때문)
 h1.addEventListener("click", handleTitleClick);
 // or
 // h1.onclick = handleTitleClick;
-
-h1.addEventListener("mouseenter", handleMouseEnter);
-h1.addEventListener("mouseleave", handleMouseLeave);
-
-window.addEventListener("resize", hadleWindowResize);
-window.addEventListener("copy", hadleWindowCopy);
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
 
 ////////////////////////////////////////////////////////////////////////////////
