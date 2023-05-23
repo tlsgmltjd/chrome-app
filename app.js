@@ -32,7 +32,28 @@ function handleTitleClick() {
 }
 */
 
-function handleTitleClick() {}
+// html 변경은 JS로!
+// style 변경은 CSS로!
+function handleTitleClick() {
+  // "active" 같은 raw string 을 사용하는 대신
+  // const 를 만들어 사용하는 것이 좋음
+  const clickedClass = "active";
+  /*
+    // h1 class 에 clickedClass 가 포함되어 있는가?
+    if (h1.className.contains(clickedClass)) {
+      // h1.className = ""; 는 모든 class를 변경 해버림
+      // h1 class 에 clickedClass 를 제거한다.
+      h1.classList.remove(clickedClass);
+    } else {
+      // h1.className = clickedClass;
+      // h1 class 에 clickedClass 를 추가한다.
+      h1.classList.add(clickedClass);
+    }
+  */
+
+  // 이 한 줄로 정리된다!
+  h1.classList.toggle(clickedClass);
+}
 
 // click 이벤트가 발생했을 때 뒤에 함수 실행 / 함수엔 () 괄호 넣으면 안됨! (콜백함수이기 때문)
 h1.addEventListener("click", handleTitleClick);

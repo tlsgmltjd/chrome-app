@@ -4,8 +4,10 @@ body {
 
 h1 {
   color: cornflowerblue;
+  transition: color 0.5;
 }
 
 .active {
   color: tomato;
+  transition: color 0.5;
 }
