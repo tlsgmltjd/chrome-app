@@ -65,9 +65,10 @@ function handleTitleClick() {
 
 // const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+const loginForm = document.querySelector("#login-form");
+// const loginButton = document.querySelector("#login-form button");
 
-function handleLoginBtnClick() {
+function onLoginSubmit(e) {
   // JS에서 유효성 검사를 하는건 하면 안되는 짓임
   /*
   const value = loginInput.value;
@@ -81,8 +82,15 @@ function handleLoginBtnClick() {
   }
   */
 
+  // e 는 이벤트가 일어났을 때 이벤트에 대한 정보들이 들어있음
+
+  // 브라우저의 기본 동작을 막아줌
+  e.preventDefault();
+
   const username = loginInput.value;
   console.log(username);
 }
 
-loginButton.addEventListener("click", handleLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
+
+// loginButton.addEventListener("click", handleLoginBtnClick);
