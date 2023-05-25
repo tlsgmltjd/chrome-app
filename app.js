@@ -97,20 +97,24 @@ function onLoginSubmit(e) {
 
   // 로컬 스토리지에 저장
   localStorage.setItem(USERNAME_KEY, username);
-
-  greeting.innerText = `Hello ${username}`;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
+  paintGreerings(username);
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
+function paintGreerings(username) {
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+  greeting.innerText = `Hello ${username}`;
+}
 
+// 로컬 스토리지에서 값 가져오기
 const saveUsername = localStorage.getItem(USERNAME_KEY);
 
 if (saveUsername === null) {
   // show the form
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-  the;
   // show the greetings
+  paintGreerings(saveUsername);
 }
 
 // loginButton.addEventListener("click", handleLoginBtnClick);
