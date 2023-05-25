@@ -67,6 +67,11 @@ function handleTitleClick() {
 const loginInput = document.querySelector("#login-form input");
 const loginForm = document.querySelector("#login-form");
 // const loginButton = document.querySelector("#login-form button");
+const greeting = document.querySelector("#greeting");
+
+// string 값들이 여러번 사용되고 그 string이 변경되면 안될때 const로 선언
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 function onLoginSubmit(e) {
   // JS에서 유효성 검사를 하는건 하면 안되는 짓임
@@ -88,9 +93,24 @@ function onLoginSubmit(e) {
   e.preventDefault();
 
   const username = loginInput.value;
-  console.log(username);
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+
+  // 로컬 스토리지에 저장
+  localStorage.setItem(USERNAME_KEY, username);
+
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
+
+const saveUsername = localStorage.getItem(USERNAME_KEY);
+
+if (saveUsername === null) {
+  // show the form
+} else {
+  the;
+  // show the greetings
+}
 
 // loginButton.addEventListener("click", handleLoginBtnClick);

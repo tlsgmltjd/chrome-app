@@ -11,3 +11,7 @@ h1 {
   color: tomato;
   transition: color 0.5;
 }
+
+.hidden {
+  display: none;
+}
