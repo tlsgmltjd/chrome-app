@@ -2,6 +2,14 @@ const toDoForm = document.querySelector("form#todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.querySelector("ul#todo-list");
 
+const TODOS_KEY = "todos";
+
+const toDos = [];
+
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
 function deleteToDo(e) {
   // 버튼의 부모에 접근(li태크)
   const li = e.target.parentElement;
@@ -30,7 +38,15 @@ function handleToDoSubmit(e) {
   e.preventDefault();
   const newToDo = toDoInput.value;
   toDoInput.value = "";
+  toDos.push(newToDo);
   paintToDo(newToDo);
+  saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos) {
+  const parsedToDos = JSON.parse(savedToDos);
+}
