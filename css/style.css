@@ -2,8 +2,22 @@ body {
   background-color: aliceblue;
 }
 
+body,
+html {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
 h1 {
-  color: cornflowerblue;
+  color: aliceblue;
   transition: color 0.5;
 }
 
@@ -14,4 +28,88 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+#backGround {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#login-input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-bottom: 4px solid;
+  margin-bottom: 60px;
+  font-size: 25px;
+}
+
+#deleteBtn {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+#todo-list {
+  justify-content: left;
+  padding: 0;
+  margin-top: 25px;
+  color: white;
+  font-size: 20px;
+}
+
+#todo-input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+  height: 30px;
+  width: 250px;
+  border: none;
+  border-bottom: 4px solid;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+  font-weight: 700;
+}
+
+#quote {
+  position: fixed;
+  bottom: 10px;
+  color: rgb(165, 165, 165);
+}
+
+#clock {
+  font-size: 150px;
+  color: white;
+  margin: 10px;
+}
+
+.bgImg1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/0.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bgImg2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/1.jpg");
+}
+
+.bgImg3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/2.jpg");
 }

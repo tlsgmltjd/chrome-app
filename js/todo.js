@@ -1,5 +1,5 @@
 const toDoForm = document.querySelector("form#todo-form");
-const toDoInput = toDoForm.querySelector("#todo-form input");
+const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.querySelector("ul#todo-list");
 
 const TODOS_KEY = "todos";
@@ -33,8 +33,9 @@ function paintToDo(newToDo) {
   // span 태그를 만듬
   const toDoText = document.createElement("span");
   // li 태그 안에 span 태그를 넣음
-  toDoLi.append(toDoText);
+  button.id = "deleteBtn";
   toDoLi.append(button);
+  toDoLi.append(toDoText);
   // li 태그 안의 span 태그의 택스트에 newToDo 를 넣음
   toDoText.innerText = newToDo.text;
   // li 태그를 ul 태그 안에 넣음
