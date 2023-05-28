@@ -1,5 +1,7 @@
 const API_KEY = "a9daa77e90315fdedae042632d323f2f";
 
+const title = document.querySelector("#geo-title");
+
 function onGeoOk(position) {
   const lat = position.coords.latitude;
   const log = position.coords.longitude;
@@ -8,6 +10,7 @@ function onGeoOk(position) {
     .then((reponse) => reponse.json())
     .then((data) => {
       console.log(data);
+      title.innerText = `${data.name} ${data.weather[0].main}`;
     });
 }
 

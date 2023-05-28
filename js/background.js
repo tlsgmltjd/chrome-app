@@ -10,7 +10,5 @@ const bg = document.querySelector("#backGround");
 
 bg.classList = choesnImage;
 
-console.log(choesnImage);
-
 // 만든 요소를 body에 추가하기
 //  document.body.append(bgImage);

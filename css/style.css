@@ -30,6 +30,14 @@ h1 {
   display: none;
 }
 
+#geo-title {
+  color: aliceblue;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  margin: 0px;
+}
+
 #backGround {
   height: 100vh;
   display: flex;
@@ -95,6 +103,14 @@ input::-webkit-input-placeholder {
   font-size: 150px;
   color: white;
   margin: 10px;
+}
+
+@media (max-width: 767px) {
+  #clock {
+    font-size: 80px;
+    color: white;
+    margin: 10px;
+  }
 }
 
 .bgImg1 {
